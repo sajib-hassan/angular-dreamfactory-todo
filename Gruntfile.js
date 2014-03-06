@@ -249,7 +249,8 @@ module.exports = function (grunt) {
             '.htaccess',
             'bower_components/**/*',
             'images/{,*/}*.{gif,webp}',
-            'styles/fonts/*'
+            'styles/fonts/*',
+            'scripts/modules/views/*'
           ]
         }, {
           expand: true,
@@ -265,7 +266,13 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
-      }
+      },
+        views: {
+            expand: true,
+            cwd: '<%= yeoman.app %>/scripts/modules/views',
+            dest: '.tmp/scripts/modules/views',
+            src: '{,*/}*.html'
+        }
     },
     concurrent: {
       server: [
@@ -349,7 +356,7 @@ module.exports = function (grunt) {
     'cdnify',
     'ngmin',
     'cssmin',
-    'uglify',
+    //'uglify',
     'rev',
     'usemin'
   ]);
