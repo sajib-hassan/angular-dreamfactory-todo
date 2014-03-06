@@ -137,10 +137,6 @@ angular.module('todoModule', ['ngRoute', 'ngDreamFactory'])
                 scope.$on('api:ready', function(E){
                     scope._getTodos().then(function(result){
                     scope.todoItems = result.record;
-                   //angular.forEach(result.record, function(object){
-                     // scope._addTodoItem(object);
-//                       scope._buildDirective(object);
- //                  })
                         },
                     function(reject){
                         //console.log(reject);
@@ -186,7 +182,6 @@ angular.module('todoModule', ['ngRoute', 'ngDreamFactory'])
                         .then(function(result){
                             scope.$emit('create:todo:success', result);
                         }, function(reject){
-                            //console.log(reject);
                             scope.$emit('create:todo:error', reject);
                         });
 
@@ -204,11 +199,8 @@ angular.module('todoModule', ['ngRoute', 'ngDreamFactory'])
                     scope.$emit('remove:todo:success', scope.todo, $index);
                 }
                 scope.updateTodo = function(){
-                    scope.$broadcast('update:todo');
-                }
-                scope.$on('update:todo', function(E){
                     scope.$emit('update:todo:success', scope.todo);
-                })
+                }
             }
         }
     }])
