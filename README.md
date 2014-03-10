@@ -1,8 +1,8 @@
-angular-dreamfactory-neverdo
+angular-dreamfactory-todo
 ============================
 
 
-Simple CRUD App using AngularJS
+Simple CRUD App using AngularJS and the angular-dreamfactory lib
 
 To build:
 
